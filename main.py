@@ -39,7 +39,7 @@ class FortuneHandler(webapp2.RequestHandler):
 
 class CountHandler(webapp2.RequestHandler):
     def get(self):
-        count_page = JINJA_ENVIRONMENT.get_template("templates/count.html")
+        count_page = JINJA_ENVIRONMENT.get_template("templates/number-start.html")
         users_fav_num = 27
         self.response.write(count_page.render(
         {"user_num" : users_fav_num}

@@ -40,10 +40,16 @@ class FortuneHandler(webapp2.RequestHandler):
 class CountHandler(webapp2.RequestHandler):
     def get(self):
         count_page = JINJA_ENVIRONMENT.get_template("templates/number-start.html")
+        self.response.write(count_page.render())
+
+    def post(self):
+        banana = JINJA_ENVIRONMENT.get_template("templates/count.html")
         users_fav_num = 27
-        self.response.write(count_page.render(
+        self.response.write(banana.render(
         {"user_num" : users_fav_num}
         ))
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
